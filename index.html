@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NaturaBite — Camilan Sehat Tanpa Rasa Bersalah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#FAF9F5] text-stone-800 antialiased">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-[#FAF9F5]/90 backdrop-blur-md border-b border-stone-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-extrabold text-xl text-emerald-800">
+        <span class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center text-sm">🌿</span>
+        NaturaBite
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+        <a href="#keunggulan" class="hover:text-emerald-700 transition">Keunggulan</a>
+        <a href="#katalog" class="hover:text-emerald-700 transition">Menu Snack</a>
+        <a href="#cara-pesan" class="hover:text-emerald-700 transition">Cara Pesan</a>
+      </nav>
+      <button onclick="toggleCart()" class="relative inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-sm transition">
+        <span>🛒 Keranjang</span>
+        <span id="cart-badge" class="bg-amber-400 text-stone-900 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+          100% Bahan Alami • Tanpa Pengawet • Rendah Gula
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-stone-900 leading-tight mb-5">
+          Ngemil Enak Setiap Hari <span class="text-emerald-700">Tanpa Takut Kalori.</span>
+        </h1>
+        <p class="text-stone-600 text-lg mb-8 leading-relaxed">
+          Dibuat dari biji-bijian utuh, kacang panggang, dan buah asli. Cocok untuk teman kerja, diet sehat, hingga camilan keluarga.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#katalog" class="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-7 py-3.5 rounded-full shadow-md transition">
+            Pilih Snack Sekarang
+          </a>
+          <a href="#keunggulan" class="bg-white hover:bg-stone-100 text-stone-700 border border-stone-200 font-semibold px-7 py-3.5 rounded-full transition">
+            Lihat Nutrisi
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual Hero Card -->
+      <div class="bg-gradient-to-br from-emerald-100 to-amber-50 p-8 rounded-3xl border border-emerald-200/60 shadow-inner">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white p-5 rounded-2xl shadow-sm">
+            <div class="text-3xl mb-2">🥣</div>
+            <h3 class="font-bold text-stone-800">Granola Panggang</h3>
+            <p class="text-xs text-stone-500 mt-1">120 kkal / saji • Tinggi Serat</p>
+          </div>
+          <div class="bg-white p-5 rounded-2xl shadow-sm mt-6">
+            <div class="text-3xl mb-2">🍪</div>
+            <h3 class="font-bold text-stone-800">Oat Almond Cookies</h3>
+            <p class="text-xs text-stone-500 mt-1">95 kkal / keping • Gluten Free</p>
+          </div>
+          <div class="bg-white p-5 rounded-2xl shadow-sm">
+            <div class="text-3xl mb-2">🍌</div>
+            <h3 class="font-bold text-stone-800">Keripik Pisang Oven</h3>
+            <p class="text-xs text-stone-500 mt-1">Tanpa Minyak • Gula Aren</p>
+          </div>
+          <div class="bg-white p-5 rounded-2xl shadow-sm mt-6">
+            <div class="text-3xl mb-2">🍫</div>
+            <h3 class="font-bold text-stone-800">Dark Choco Energy Ball</h3>
+            <p class="text-xs text-stone-500 mt-1">70% Kakao Murni • Kurma</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keunggulan -->
+  <section id="keunggulan" class="py-12 bg-white border-y border-stone-200/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid sm:grid-cols-3 gap-8">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0">🔥</div>
+        <div>
+          <h3 class="font-bold text-stone-900">Dipanggang, Bukan Digoreng</h3>
+          <p class="text-sm text-stone-600 mt-1">Mengurangi lemak jenuh hingga 80% sehingga lebih ringan di tenggorokan dan jantung.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl shrink-0">🍯</div>
+        <div>
+          <h3 class="font-bold text-stone-900">Pemanis Alami Indeks Glikemik Rendah</h3>
+          <p class="text-sm text-stone-600 mt-1">Menggunakan madu hutan, kurma, dan gula kelapa organik tanpa gula rafinasi.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl shrink-0">📦</div>
+        <div>
+          <h3 class="font-bold text-stone-900">Fresh Made by Order</h3>
+          <p class="text-sm text-stone-600 mt-1">Diproduksi setiap hari sehingga kerenyahan dan kesegaran nutrisi tetap terjaga.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Katalog Produk -->
+  <section id="katalog" class="py-16 sm:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <h2 class="text-3xl font-extrabold text-stone-900">Katalog Snack Sehat</h2>
+          <p class="text-stone-600 mt-1">Pilih favoritmu dan masukkan ke keranjang belanja.</p>
+        </div>
+        <!-- Filter Kategori -->
+        <div class="flex flex-wrap gap-2" id="filter-buttons">
+          <button onclick="filterProducts('Semua')" class="filter-btn active bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-full transition">Semua</button>
+          <button onclick="filterProducts('Cookies')" class="filter-btn bg-white text-stone-600 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full transition">Cookies</button>
+          <button onclick="filterProducts('Granola & Bar')" class="filter-btn bg-white text-stone-600 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full transition">Granola & Bar</button>
+          <button onclick="filterProducts('Keripik Sehat')" class="filter-btn bg-white text-stone-600 border border-stone-200 text-xs font-semibold px-4 py-2 rounded-full transition">Keripik Sehat</button>
+        </div>
+      </div>
+
+      <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Produk dirender via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Cara Pesan -->
+  <section id="cara-pesan" class="py-14 bg-emerald-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-8">Cara Pemesanan Mudah</h2>
+      <div class="grid sm:grid-cols-3 gap-6 text-left">
+        <div class="bg-emerald-800/60 p-6 rounded-2xl border border-emerald-700">
+          <span class="text-amber-400 font-extrabold text-lg">01. Pilih Menu</span>
+          <p class="text-emerald-100 text-sm mt-2">Klik tombol "+ Tambah" pada varian snack sehat yang Anda inginkan.</p>
+        </div>
+        <div class="bg-emerald-800/60 p-6 rounded-2xl border border-emerald-700">
+          <span class="text-amber-400 font-extrabold text-lg">02. Isi Data Pengiriman</span>
+          <p class="text-emerald-100 text-sm mt-2">Buka keranjang, periksa jumlah pesanan, lalu lengkapi nama, nomor WA, dan alamat.</p>
+        </div>
+        <div class="bg-emerald-800/60 p-6 rounded-2xl border border-emerald-700">
+          <span class="text-amber-400 font-extrabold text-lg">03. Pesanan Tercatat Otomatis</span>
+          <p class="text-emerald-100 text-sm mt-2">Pesanan langsung masuk ke sistem kami dan admin akan menghubungi Anda via WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-sm text-stone-500 border-t border-stone-200">
+    &copy; 2026 NaturaBite Healthy Snacks. Sehat, Lezat, Alami.
+  </footer>
+
+  <!-- Slide-Over Keranjang & Form Checkout -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCart()" class="absolute inset-0 bg-black/40 backdrop-blur-xs"></div>
+    <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col">
+      <!-- Header Drawer -->
+      <div class="p-5 border-b border-stone-200 flex items-center justify-between">
+        <h3 class="font-extrabold text-lg text-stone-900">Keranjang & Checkout</h3>
+        <button onclick="toggleCart()" class="w-8 h-8 rounded-full hover:bg-stone-100 flex items-center justify-center text-stone-500">✕</button>
+      </div>
+
+      <!-- Konten Scrollable -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-6">
+        <!-- Daftar Item -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-400 mb-3">Item Dipilih</h4>
+          <div id="cart-items" class="space-y-3">
+            <p class="text-sm text-stone-500 italic">Keranjang masih kosong.</p>
+          </div>
+        </div>
+
+        <!-- Ringkasan Harga -->
+        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200/80 flex items-center justify-between">
+          <span class="text-sm font-medium text-stone-600">Total Pembayaran</span>
+          <span id="cart-total" class="text-xl font-extrabold text-emerald-700">Rp 0</span>
+        </div>
+
+        <!-- Form Pemesanan -->
+        <form id="order-form" onsubmit="submitOrder(event)" class="space-y-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-400">Data Pemesan</h4>
+          
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Nama Lengkap *</label>
+            <input type="text" id="cust-name" required placeholder="Contoh: Budi Santoso"
+              class="w-full px-3.5 py-2.5 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-emerald-600">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Nomor WhatsApp *</label>
+            <input type="tel" id="cust-wa" required placeholder="Contoh: 081234567890"
+              class="w-full px-3.5 py-2.5 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-emerald-600">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Alamat Lengkap Pengiriman *</label>
+            <textarea id="cust-address" rows="2" required placeholder="Jalan, No. Rumah, Kecamatan, Kota"
+              class="w-full px-3.5 py-2.5 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-emerald-600"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Catatan Tambahan (Opsional)</label>
+            <input type="text" id="cust-note" placeholder="Contoh: Kirim sore hari / tanpa bubble wrap"
+              class="w-full px-3.5 py-2.5 text-sm border border-stone-300 rounded-xl focus:outline-none focus:border-emerald-600">
+          </div>
+
+          <button type="submit" id="submit-btn"
+            class="w-full bg-emerald-700 hover:bg-emerald-800 disabled:bg-stone-300 text-white font-bold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+            <span>Kirim Pesanan Sekarang</span>
+          </button>
+        </form>
+
+        <!-- Notifikasi Sukses -->
+        <div id="order-success" class="hidden bg-emerald-50 border border-emerald-200 p-4 rounded-2xl text-sm text-emerald-900">
+          <p class="font-bold text-base mb-1">✅ Pesanan Berhasil Dicatat!</p>
+          <p id="success-detail" class="text-xs text-emerald-800 mb-3"></p>
+          <a id="wa-confirm-link" href="#" target="_blank"
+            class="inline-block w-full text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 rounded-xl transition">
+            Konfirmasi via WhatsApp Admin
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // KONFIGURASI PENTING:
+    // Ganti URL di bawah ini dengan URL Web App dari Google Apps Script Anda!
+    // =========================================================================
+    const GOOGLE_SCRIPT_URL = 'PASTE_URL_WEB_APP_APPS_SCRIPT_ANDA_DI_SINI';
+    const ADMIN_WA_NUMBER = '6281234567890'; // Ganti dengan nomor WA toko Anda (format 62...)
+
+    // Data Produk Snack Sehat
+    const products = [
+      {
+        id: 1,
+        name: 'Almond Oat Choco Cookies',
+        category: 'Cookies',
+        calories: '95 kkal / keping',
+        weight: '150g (12 pcs)',
+        price: 35000,
+        emoji: '🍪',
+        desc: 'Oat utuh panggang dengan irisan almond dan dark chocolate chips rendah gula.'
+      },
+      {
+        id: 2,
+        name: 'Honey Cranberry Granola',
+        category: 'Granola & Bar',
+        calories: '120 kkal / saji',
+        weight: '250g',
+        price: 42000,
+        emoji: '🥣',
+        desc: 'Rolled oat, biji labu, biji bunga matahari, cranberry kering, dan madu murni.'
+      },
+      {
+        id: 3,
+        name: 'Baked Banana Cinnamon Chips',
+        category: 'Keripik Sehat',
+        calories: '110 kkal / bungkus',
+        weight: '100g',
+        price: 25000,
+        emoji: '🍌',
+        desc: 'Pisang kepok pilihan yang dipanggang renyah dengan taburan kayu manis organik.'
+      },
+      {
+        id: 4,
+        name: 'Matcha Chia Energy Bar',
+        category: 'Granola & Bar',
+        calories: '140 kkal / bar',
+        weight: '180g (4 bars)',
+        price: 48000,
+        emoji: '🍵',
+        desc: 'Energi instan dari kurma medjool, kacang mede, biji chia, dan matcha Jepang.'
+      },
+      {
+        id: 5,
+        name: 'Crispy Tempeh Seaweed',
+        category: 'Keripik Sehat',
+        calories: '105 kkal / bungkus',
+        weight: '90g',
+        price: 22000,
+        emoji: '🌿',
+        desc: 'Keripik tempe non-kolesterol dengan bumbu rumput laut panggang gurih.'
+      },
+      {
+        id: 6,
+        name: 'Peanut Butter Flax Cookies',
+        category: 'Cookies',
+        calories: '100 kkal / keping',
+        weight: '150g (12 pcs)',
+        price: 38000,
+        emoji: '🥜',
+        desc: 'Selai kacang alami tanpa minyak terhidrogenasi dipadu biji rami kaya omega-3.'
+      }
+    ];
+
+    let cart = [];
+    let currentFilter = 'Semua';
+
+    // Format Rupiah
+    const formatRupiah = (num) => 'Rp ' + num.toLocaleString('id-ID');
+
+    // Render Katalog Produk
+    function renderProducts() {
+      const grid = document.getElementById('product-grid');
+      const filtered = currentFilter === 'Semua' 
+        ? products 
+        : products.filter(p => p.category === currentFilter);
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="bg-white rounded-3xl p-6 border border-stone-200/80 shadow-xs hover:shadow-md transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-4xl bg-stone-100 w-14 h-14 rounded-2xl flex items-center justify-center">${p.emoji}</span>
+              <span class="text-xs font-semibold bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">${p.calories}</span>
+            </div>
+            <span class="text-xs font-medium text-stone-400">${p.category} • ${p.weight}</span>
+            <h3 class="font-bold text-lg text-stone-900 mt-1">${p.name}</h3>
+            <p class="text-sm text-stone-600 mt-2 leading-relaxed">${p.desc}</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between">
+            <span class="font-extrabold text-lg text-stone-900">${formatRupiah(p.price)}</span>
+            <button onclick="addToCart(${p.id})" class="bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold px-4 py-2.5 rounded-full transition">
+              + Tambah
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Filter Kategori
+    function filterProducts(category) {
+      currentFilter = category;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.innerText === category) {
+          btn.classList.add('bg-emerald-700', 'text-white');
+          btn.classList.remove('bg-white', 'text-stone-600', 'border', 'border-stone-200');
+        } else {
+          btn.classList.remove('bg-emerald-700', 'text-white');
+          btn.classList.add('bg-white', 'text-stone-600', 'border', 'border-stone-200');
+        }
+      });
+      renderProducts();
+    }
+
+    // Tambah ke Keranjang
+    function addToCart(id) {
+      const product = products.find(p => p.id === id);
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+      document.getElementById('order-success').classList.add('hidden');
+    }
+
+    // Ubah Jumlah Item
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      updateCartUI();
+    }
+
+    // Update Tampilan Keranjang
+    function updateCartUI() {
+      const badge = document.getElementById('cart-badge');
+      const itemsContainer = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+
+      const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+      const totalPrice = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+      badge.innerText = totalQty;
+      totalEl.innerText = formatRupiah(totalPrice);
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<p class="text-sm text-stone-500 italic">Keranjang masih kosong. Silakan pilih snack terlebih dahulu.</p>';
+        return;
+      }
+
+      itemsContainer.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between bg-stone-50 p-3 rounded-xl border border-stone-200/70">
+          <div>
+            <p class="text-sm font-bold text-stone-800">${item.name}</p>
+            <p class="text-xs text-stone-500">${formatRupiah(item.price)} x ${item.qty}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 rounded-lg bg-white border border-stone-300 text-stone-700 font-bold">-</button>
+            <span class="text-sm font-bold w-5 text-center">${item.qty}</span>
+            <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 rounded-lg bg-emerald-700 text-white font-bold">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Buka/Tutup Drawer Keranjang
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    // Kirim Pesanan ke Google Sheets (Code.gs)
+    async function submitOrder(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Keranjang belanja Anda masih kosong!');
+        return;
+      }
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.innerHTML = '<span>Menyimpan Pesanan...</span>';
+
+      const nama = document.getElementById('cust-name').value.trim();
+      const whatsapp = document.getElementById('cust-wa').value.trim();
+      const alamat = document.getElementById('cust-address').value.trim();
+      const catatan = document.getElementById('cust-note').value.trim();
+
+      const detailPesanan = cart.map(i => `${i.name} (${i.qty}x)`).join(', ');
+      const totalItem = cart.reduce((sum, i) => sum + i.qty, 0);
+      const totalHarga = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+      const payload = {
+        nama,
+        whatsapp,
+        alamat,
+        detailPesanan,
+        totalItem,
+        totalHarga,
+        catatan
+      };
+
+      try {
+        // Kirim data ke Google Apps Script
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (result.status === 'success') {
+          // Siapkan pesan WhatsApp otomatis
+          const waText = encodeURIComponent(
+            `Halo NaturaBite, saya ingin konfirmasi pesanan:\n` +
+            `• ID Pesanan: ${result.orderId}\n` +
+            `• Nama: ${nama}\n` +
+            `• Pesanan: ${detailPesanan}\n` +
+            `• Total: ${formatRupiah(totalHarga)}\n` +
+            `• Alamat: ${alamat}`
+          );
+
+          document.getElementById('success-detail').innerText = 
+            `ID Pesanan Anda: ${result.orderId}. Data telah tersimpan otomatis di daftar pesanan kami.`;
+          document.getElementById('wa-confirm-link').href = `https://wa.me/${ADMIN_WA_NUMBER}?text=${waText}`;
+          document.getElementById('order-success').classList.remove('hidden');
+
+          // Reset keranjang & form
+          cart = [];
+          updateCartUI();
+          document.getElementById('order-form').reset();
+        } else {
+          alert('Terjadi kesalahan: ' + result.message);
+        }
+      } catch (err) {
+        alert('Gagal terhubung ke server. Pastikan URL Google Apps Script sudah benar dan di-deploy sebagai "Anyone".');
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<span>Kirim Pesanan Sekarang</span>';
+      }
+    }
+
+    // Inisialisasi
+    renderProducts();
+  </script>
+</body>
+</html>
