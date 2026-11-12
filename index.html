@@ -232,12 +232,11 @@
   </div>
 
   <script>
-    // =========================================================================
-    // KONFIGURASI PENTING:
-    // Ganti URL di bawah ini dengan URL Web App dari Google Apps Script Anda!
-    // =========================================================================
-    const GOOGLE_SCRIPT_URL = 'PASTE_URL_WEB_APP_APPS_SCRIPT_ANDA_DI_SINI';
-    const ADMIN_WA_NUMBER = '6281234567890'; // Ganti dengan nomor WA toko Anda (format 62...)
+    // URL Web App Google Apps Script Anda
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCHFtTA1z-Ykg_plrOotDyRcAwHDJFBfEBNegbdys9_vkRQPUoNarC_Hk4b3Yt5k2I7Q/exec';
+    
+    // Ganti dengan nomor WhatsApp admin toko Anda (gunakan awalan 62 tanpa tanda +)
+    const ADMIN_WA_NUMBER = '6281234567890';
 
     // Data Produk Snack Sehat
     const products = [
@@ -446,16 +445,18 @@
       };
 
       try {
-        // Kirim data ke Google Apps Script
+        // Menggunakan text/plain agar terhindar dari CORS preflight (OPTIONS) di Google Apps Script
         const response = await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
           body: JSON.stringify(payload)
         });
 
         const result = await response.json();
 
         if (result.status === 'success') {
-          // Siapkan pesan WhatsApp otomatis
           const waText = encodeURIComponent(
             `Halo NaturaBite, saya ingin konfirmasi pesanan:\n` +
             `• ID Pesanan: ${result.orderId}\n` +
@@ -478,7 +479,7 @@
           alert('Terjadi kesalahan: ' + result.message);
         }
       } catch (err) {
-        alert('Gagal terhubung ke server. Pastikan URL Google Apps Script sudah benar dan di-deploy sebagai "Anyone".');
+        alert('Gagal terhubung ke server. Pastikan deployment Apps Script diatur ke "Who has access: Anyone".');
         console.error(err);
       } finally {
         btn.disabled = false;
